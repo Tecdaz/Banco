@@ -13,13 +13,13 @@ class Queue():
         new_node = Node(data)
 
         # Recorre la fila hasta el final, si es el primer elemento lo inserta al principio
-        if self.head == None:
+        if self.head is None:
             self.head = new_node
         else:
             iter = self.head
-            while iter != None:
+            while iter.next is not None:
                 iter = iter.next
-            iter = new_node
+            iter.next = new_node
         
         self.size += 1
 
@@ -38,8 +38,7 @@ class Queue():
             self.head = self.head.next
             node_to_extract.next = None
             self.size -= 1
-
-        return node_to_extract
+            return node_to_extract
 
 
     def show_head(self) -> str:
