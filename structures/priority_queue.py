@@ -8,5 +8,7 @@ class Priority_queue(Queue):
         self.conditions = []
 
     def set_conditions(self):
-        self.conditions.append(bool((select_options("El ususario debe ser cliente?", is_client))))
+        self.conditions.append(bool(
+            select_options("El ususario debe ser cliente?", is_client)
+            ))
         self.conditions.append(select_options("Seleccione el tipo de tramite", operations))
