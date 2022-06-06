@@ -1,4 +1,13 @@
-# Como usar
+# Banco controlado por filas
+Aplicacion de consola para controlar el flujo de un 'banco', mediante una fila general y con la posibilidad de crear dos filas extras con un criterio combinado.
+
+Caracteristicas de la aplicacion:
+- Ingresar cliente
+- Atender cliente
+- Crear fila especial
+- Cerrar fila especial
+- Mostrar operaciones realizadas
+
 Para usar la aplicacion solo se necesita tener python instalado, la aplicacion esta hecha sin librerias externas para no complicar su instalacion
 
 ## Instalación Python
