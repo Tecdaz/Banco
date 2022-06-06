@@ -42,7 +42,7 @@ Monto: {self.amount}
         self.name = self.__input_data("Ingrese el nombre")
         self.age = int(self.__input_data('Ingrese la edad'))
         self.operation = select_options('Ingrese su operacion', operations)
-        self.destinatary = select_options('Ingrese su destinatario', destinataries)
+        self.destinatary = select_options(
+            'Ingrese su destinatario', destinataries)
         self.amount = int(self.__input_data('Ingrese el monto'))
         self.is_client = select_options('Es cliente?', is_client)
-
