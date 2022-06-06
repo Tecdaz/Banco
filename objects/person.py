@@ -44,5 +44,5 @@ Monto: {self.amount}
         self.operation = select_options('Ingrese su operacion', operations)
         self.destinatary = select_options('Ingrese su destinatario', destinataries)
         self.amount = int(self.__input_data('Ingrese el monto'))
-        self.is_client = bool(select_options('Es cliente?', is_client))
+        self.is_client = select_options('Es cliente?', is_client)
 
