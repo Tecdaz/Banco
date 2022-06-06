@@ -65,7 +65,6 @@ def attend_client():
     # Si no hay filas especiales directamente atiende de la fila general
     if len(extra_queues) == 0:
         extract_client(main_queue)
-        end_message('Cliente atendido!!')
     else:
         select_queue()
 
@@ -132,6 +131,7 @@ def close_queue():
             option_selected = int(input('Ingrese una opcion valida: '))
 
         extra_queues.remove(options[option_selected])
+        end_message('Fila cerrada!')
     else:
         end_message('No hay filas especiales abiertas')
 
@@ -141,10 +141,13 @@ def list_operations():
     clear()
     min = int(input('Monto minimo: '))
     max = int(input('Monto maximo: '))
+    count = 1
     for person in operations_history:
         if person.amount >= min and person.amount <= max:
+            print('\n', count, '.')
             print(person)
-    end_message('Presione una tecla para volver')
+            count += 1
+    input('\nPresione una tecla para volver ->')
 
 
 def view_main():
