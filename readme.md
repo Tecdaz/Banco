@@ -26,6 +26,8 @@ Paso siguiente es descargar o clonar el proyecto.
 ## Ejecucuión
 - Windows
 
+Descargar el archivo banco.exe y ejecutarlo
+o
 Abrir una teminal en la carpeta donde se haya guardado el proyecto y ejecutar
 ```cmd
 python main.py
