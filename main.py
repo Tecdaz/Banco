@@ -73,20 +73,20 @@ def new_queue():
     '''Crea una nueva Fila pasando a las personas que pertenecen a ella'''
     global extra_queues, main_queue
 
-    def move_clients(is_client: bool, tramit: str, destiny: Priority_queue):
+    def move_clients(is_client, tramit, destiny: Priority_queue):
         '''Mueve los clientes atendiendo al criterio combinado'''
         global main_queue
-        # Iterador y Fila auxiliar para hacer buen uso de las filas y solo extraer su primer elemento
-        iter = main_queue.head
+        # Fila auxiliar para ingresar los que no cumplan la condicion
         aux_queue = Queue()
-        while iter is not None:
-            if iter.data.is_client == is_client and iter.data.operation == tramit:
+        # Vacia la fila principal
+        while not main_queue.empty_queue():
+            if main_queue.head.data.is_client == is_client and main_queue.head.data.operation == tramit:
                 destiny.append(main_queue.extract())
             else:
                 aux_queue.append(main_queue.extract())
-            iter = iter.next
-        # la fila principal se queda con los usuarios que no se cambiaron de fila
-        main_queue = aux_queue
+        # Llena la fila principal con los usuarios que no se van a cambiar de fila
+        while not aux_queue.empty_queue():
+            main_queue.append(aux_queue.extract())
 
     if len(extra_queues) < 2:
         # Crea la fila y la agrega a la lista de listas especiales

@@ -9,7 +9,7 @@ class Person():
         self.operation: str = None
         self.destinatary: str = None
         self.amount: int = None
-        self.is_client: bool = None
+        self.is_client = None
 
     # Private
 

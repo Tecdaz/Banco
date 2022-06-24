@@ -11,7 +11,11 @@ class Queue():
 
     def append(self, data) -> None:
         '''Inserta un nuevo objeto de tipo cliente al final de la fila'''
-        new_node = Node(data)
+        # Cuando se mueven nodos entre pilas es importante saber que tipo de dato estamos filando, si es uno nuevo, o es un nodo ya creado
+        if isinstance(data, Node):
+            new_node = data
+        else:
+            new_node = Node(data)
 
         # Recorre la fila hasta el final, si es el primer elemento lo inserta al principio
         if self.head is None:
@@ -23,6 +27,7 @@ class Queue():
             iter.next = new_node
 
         self.size += 1
+
 
     def empty_queue(self) -> bool:
         '''Retorna un valor booleano'''
